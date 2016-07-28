@@ -1,0 +1,25 @@
+{
+  "name": "ChromeHttpRequestBlocker",
+  "homepage": "https://github.com/wolfascu/ChromeHttpRequestBlocker",
+  "authors": [
+    "Cristian Lupașcu"
+  ],
+  "description": "This extension blocks HTTP Request based on configurable URL patterns.",
+  "main": "",
+  "license": "Apache License",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.0",
+    "angular": "angularjs#^1.5.8",
+    "Ionicons": "ionicons#^2.0.1"
+  }
+}
