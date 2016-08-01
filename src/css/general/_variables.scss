@@ -3,9 +3,13 @@ $main-blue: #4285f4;
 $font-stack: 'Open Sans', sans-serif;
 
 // custom bootstrap
-$navbar-height: 70px;
+$navbar-default-bg: $main-blue;
 $navbar-default-color: #fff;
 $navbar-default-link-color: #fff;
-$navbar-default-bg: $main-blue;
+$navbar-default-toggle-hover-bg: darken( $main-blue, 10% );
+$navbar-default-toggle-border-color: none;
+$navbar-height: 70px;
+
 $font-family-sans-serif: $font-stack;
+
 $btn-primary-bg: $main-blue;
