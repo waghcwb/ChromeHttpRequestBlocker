@@ -6,6 +6,11 @@
 	outline: none !important;
 }
 
+html, body {
+	height: 100%;
+}
+
 .wrapper {
 	min-width: 600px;
+	height: 100%;
 }
