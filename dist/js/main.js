@@ -15,11 +15,6 @@ var RequestBlockerApp = (function( window, $, AngularFactory, undefined ) {
         init: function() {
             AngularFactory();
         }
-    } else {
-        console.warn('No patterns defined.');
-    }
-            });
-        }
     };
 
     function parseLink( url ) {
@@ -42,12 +37,33 @@ var RequestBlockerApp = (function( window, $, AngularFactory, undefined ) {
     app.controller('PopupController', function( $scope ) {
         $scope.brand = 'HTTP Request Blocker';
 
-    RequestBlocker.fn.helpers = {
-        parseLink: function( url ) {
-            var _link = document.createElement('a');
-                _link.href = url;
+        $scope.edit = function( id ) {
+            var $link = $('[data-link-id="' + id + '"]'),
+                $modal = $('#edit-link-modal');
 
-            return _link;
+            var title = $link.find('.link-url').text(),
+                hostname = parseLink( title ).hostname;
+
+            $modal.find('.modal-header .modal-title').text( hostname );
+            $modal.modal();
+        };
+    })
+    .directive('modals', function() {
+        return {
+            templateUrl: 'dist/js/templates/modals.html',
+            replace: true
+        };
+    })
+    .directive('navbar', function() {
+        return {
+            templateUrl: 'dist/js/templates/navbar.html',
+            replace: true
+        };
+    })
+    .directive('testing', function() {
+        return {
+            templateUrl: 'dist/js/templates/table.html',
+            replace: true
         }
     });
 });
