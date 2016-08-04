@@ -60,9 +60,9 @@ var RequestBlockerApp = (function( window, $, AngularFactory, undefined ) {
             replace: true
         };
     })
-    .directive('testing', function() {
+    .directive('patterns', function() {
         return {
-            templateUrl: 'dist/js/templates/table.html',
+            templateUrl: 'dist/js/templates/patterns.html',
             replace: true
         }
     });

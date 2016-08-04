@@ -2,9 +2,9 @@ var ChromeRequestBlockerApp = (function( window, chrome, RequestBlocker, undefin
     'use strict';
 
     var dummie = [{
-        'domain': 'web.whatsapp.com',
-        'pattern': '*://web.whatsapp.com/*',
-        'title': 'WhatsApp'
+        'title': 'Github',
+        'pattern': '*://github.com/*',
+        'domain': 'github.com'
     }, {
         'title': 'Chromiun',
         'pattern': '*://web.whatsapp.com/*',
