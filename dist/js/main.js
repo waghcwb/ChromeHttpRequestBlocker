@@ -1,7 +1,5 @@
-var RequestBlockerApp = (function( $, angular, chrome, window, document, undefined ) {
+var RequestBlockerApp = (function( window, $, AngularFactory, undefined ) {
     'use strict';
-
-    var app = angular.module('RequestBlockerApp', []);
 
     var requestBlocker;
 
@@ -15,9 +13,26 @@ var RequestBlockerApp = (function( $, angular, chrome, window, document, undefin
 
     RequestBlocker.fn = RequestBlocker.prototype = {
         init: function() {
-            console.warn('ini');
+            AngularFactory();
         }
     };
+
+    function parseLink( url ) {
+        var _link = document.createElement('a');
+            _link.href = url;
+
+        return _link;
+    };
+
+    window.requestBlocker = requestBlocker = RequestBlocker();
+
+    requestBlocker.init()
+
+})( this, jQuery, function AngularFactory() {
+
+    'use strict';
+
+    var app = angular.module('RequestBlockerApp', []);
 
     app.controller('PopupController', function( $scope ) {
         $scope.brand = 'HTTP Request Blocker';
@@ -51,16 +66,4 @@ var RequestBlockerApp = (function( $, angular, chrome, window, document, undefin
             replace: true
         }
     });
-
-    function parseLink( url ) {
-        var _link = document.createElement('a');
-            _link.href = url;
-
-        return _link;
-    };
-
-    window.requestBlocker = requestBlocker = RequestBlocker();
-
-    requestBlocker.init()
-
-})( jQuery, angular, chrome, this, document );
+});
