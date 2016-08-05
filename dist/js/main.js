@@ -48,19 +48,22 @@ var RequestBlockerApp = (function( window, $, AngularFactory, undefined ) {
             $modal.modal();
         };
     })
-    .directive('modals', function() {
+
+    app.directive('modals', function() {
         return {
             templateUrl: 'dist/js/templates/modals.html',
             replace: true
         };
     })
-    .directive('navbar', function() {
+
+    app.directive('navbar', function() {
         return {
             templateUrl: 'dist/js/templates/navbar.html',
             replace: true
         };
     })
-    .directive('patterns', function() {
+
+    app.directive('patterns', function() {
         return {
             templateUrl: 'dist/js/templates/patterns.html',
             replace: true

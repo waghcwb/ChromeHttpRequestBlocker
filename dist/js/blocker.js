@@ -63,7 +63,7 @@ var ChromeRequestBlockerApp = (function( window, chrome, RequestBlocker, undefin
 
             console.groupEnd();
 
-            if ( pattern.domain != '*' && window.location.host === pattern.domain ) {
+            if ( pattern.domain === '*' || window.location.host === pattern.domain ) {
                 chrome.webRequest.onBeforeRequest.addListener( this.blockRequest, {
                     urls: blockPatterns
                 }, ['blocking']);
@@ -93,6 +93,12 @@ var ChromeRequestBlockerApp = (function( window, chrome, RequestBlocker, undefin
             this.updateFilters();
             callback.call();
         });
+    };
+
+    ChromeRequestBlocker.fn.export = function( format ) {
+        if ( format === 'json' ) {
+            console.warn('export to json');
+        }
     };
 
     window.ChromeRequestBlocker = ChromeRequestBlocker();
